@@ -1,0 +1,64 @@
+<!--Event bubble() terms that describes how the browser handles events targeted at nested elements
+To prevent default behaviour => preventDefault()
+stopPropagation => prevent any propagation of the same event-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event bubble example</title>
+</head>
+<body>
+    <div id="container">
+        <button>Submit</button>
+    </div>
+    <pre id="object"></pre>
+
+    <form>
+        <div>
+          <label for="fname">First name: </label>
+          <input id="fname" type="text">
+        </div>
+        <div>
+          <label for="lname">Last name: </label>
+          <input id="lname" type="text">
+        </div>
+        <div>
+           <input id="submit" type="submit">
+        </div>
+      </form>
+      <p></p>
+</body>
+<script>
+    const obj=document.querySelector('#object');
+
+    function handleEvents(e){
+        obj.textContent+=`you clicked a ${e.currentTarget.tagName} element\n`
+
+
+    }
+    const container=document.querySelector('#container');
+    const btn=document.querySelector('button');
+
+    btn.addEventListener('click',handleEvents);
+    container.addEventListener('click',handleEvents);
+    document.body.addEventListener('click',handleEvents);
+
+    const form = document.querySelector('form');
+const fname = document.getElementById('fname');
+const lname = document.getElementById('lname');
+const para = document.querySelector('p');
+
+form.addEventListener('submit', e => {
+  if (fname.value === '' || lname.value === '') {
+    e.preventDefault();
+    para.textContent = 'You need to fill in both names!';
+  }
+});
+
+
+</script>
+</html>
+
+
