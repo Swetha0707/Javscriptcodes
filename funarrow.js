@@ -15,10 +15,10 @@ let square = function(x){
     let user = {
         name: "GFG",
         gfg1:() => {
-            console.log("hello " + this.name); // no 'this' binding here
+            console.log("hello " + this.name); // no 'this' binding here bcs its an arrow function
         },
         gfg2(){       
-            console.log("Welcome to " + this.name); // 'this' binding works here
+            console.log("Welcome to " + this.name); // 'this' binding works here bcs its a regular function
         }  
      };
     user.gfg1();

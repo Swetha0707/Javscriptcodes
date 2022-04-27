@@ -15,7 +15,8 @@ const returnedchar=str1.indexOf(searchstring);
 console.log(`The character ${searchstring} is at the index of ${returnedchar}`);
 console.log(`The character  ${searchstring} after first example is ${str1.indexOf(searchstring,(returnedchar+1))}`);
 
-//The replace() method returns a new string with some or all matches of a pattern replaced by a replacement. The pattern can be a string or a RegExp,and it only replaces the first occurence of a substring.
+//The replace() method returns a new string with some or all matches of a pattern replaced by a replacement. 
+//The pattern can be a string or a RegExp,and it only replaces the first occurence of a substring.
 
 const p = 'The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?';
 
